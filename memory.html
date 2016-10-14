@@ -19,25 +19,26 @@ div#memory_board > div{
 	float:left;
 	margin:10px;
 	padding:20px;
-	font-size:24px;
+	font-size:20px;
 	cursor:pointer;
-	text-align:center;
+	text-align:inherit;
+	color:rgb(107, 221, 241)
 }
-</style>
-<script>
-var memory_array = ['Keegan','Keegan','Adam','Adam','James S.','James S.','Ricky','Ricky','Nicole','Nicole','Addey','Addey','James H.','James H.','Onna','Onna','Jacob','Jacob','Eddrick','Eddrick','Martin','Martin','Dustin','Dustin'];
-var memory_values = [];
-var memory_tile_ids = [];
-var tiles_flipped = 0;
-Array.prototype.memory_tile_shuffle = function(){
-    var i = this.length, j, temp;
-    while(--i > 0){
-        j = Math.floor(Math.random() * (i+1));
-        temp = this[j];
-        this[j] = this[i];
-        this[i] = temp;
-    }
-}
+	</style>
+	<script>
+	var memory_array = ['Keegan','Keegan','Adam','Adam','James','James','Ricky','Ricky','Nicole','Nicole','Addey','Addey','JamesH','JamesH','Onna','Onna','Jacob','Jacob','Eddrick','Eddrick','Martin','Martin','Dustin','Dustin'];
+	var memory_values = [];
+	var memory_tile_ids = [];
+	var tiles_flipped = 0;
+	Array.prototype.memory_tile_shuffle = function(){
+	    var i = this.length, j, temp;
+	    while(--i > 0){
+	        j = Math.floor(Math.random() * (i+1));
+	        temp = this[j];
+	        this[j] = this[i];
+	        this[i] = temp;
+	    }
+	}
 function newBoard(){
 	tiles_flipped = 0;
 	var output = '';
@@ -49,7 +50,7 @@ function newBoard(){
 }
 function memoryFlipTile(tile,val){
 	if(tile.innerHTML == "" && memory_values.length < 2){
-		tile.style.background = '#FFF';
+		tile.style.background = 'url(img/' + val + '.png) no-repeat';
 		tile.innerHTML = val;
 		if(memory_values.length == 0){
 			memory_values.push(val);
@@ -70,9 +71,9 @@ function memoryFlipTile(tile,val){
 				function flip2Back(){
 				    var tile_1 = document.getElementById(memory_tile_ids[0]);
 				    var tile_2 = document.getElementById(memory_tile_ids[1]);
-				    tile_1.style.background = 'url(tile_bg.jpg) no-repeat';
+				    tile_1.style.background = 'url(img/?.png) no-repeat';
             	    tile_1.innerHTML = "";
-				    tile_2.style.background = 'url(tile_bg.jpg) no-repeat';
+				    tile_2.style.background = 'url(img/?.png) no-repeat';
             	    tile_2.innerHTML = "";
 				    memory_values = [];
             	    memory_tile_ids = [];
