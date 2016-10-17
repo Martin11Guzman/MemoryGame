@@ -8,7 +8,7 @@
 div#memory_board{
 	background:#cce6ff;
 	border:#734d26 7px ridge;
-	width:830px;
+	width:760px;
 	height:540px;
 	padding:24px;
 	margin:0px auto;
@@ -16,7 +16,7 @@ div#memory_board{
 div#memory_board > div{
 	background: url(tile_bg.jpg) no-repeat;
 	border:#000 3px solid;
-	width:70px;
+	width:60px;
 	height:71px;
 	float:left;
 	margin:10px;
@@ -66,7 +66,10 @@ function memoryFlipTile(tile,val){
 				memory_values = [];
             	memory_tile_ids = [];
 				if(tiles_flipped == memory_array.length){
-					swal({   title: "Great Job!!",   text: "Good memory there young pattawan!",   type: "success",   confirmButtonText: "Generate New Game!" });
+<<<<<<< HEAD
+					swal({   title: "Congratulations!!",   text: "Good memory there young pattawan!",   type: "success",   confirmButtonText: "Generate New Game!" });
+=======
+>>>>>>> master
 					document.getElementById('memory_board').innerHTML = "";
 					newBoard();
 				}
