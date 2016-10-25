@@ -10,6 +10,7 @@
 	<style>
 		div#memory_board {
 			background: #cce6ff;
+			background-size:
 			border: #734d26 7px ridge;
 			width: 760px;
 			height: 540px;
@@ -66,6 +67,7 @@
 		function memoryFlipTile(tile, val) {
 			if (tile.innerHTML == "" && memory_values.length < 2) {
 				tile.style.background = 'url(img/' + val + '.png) no-repeat';
+				tile.style.backgroundSize= "102px 110px";
 				tile.innerHTML = val;
 				if (memory_values.length == 0) {
 					memory_values.push(val);
@@ -93,9 +95,14 @@
 						function flip2Back() {
 							var tile_1 = document.getElementById(memory_tile_ids[0]);
 							var tile_2 = document.getElementById(memory_tile_ids[1]);
-							tile_1.style.background = 'url(img/mystery.png) no-repeat';
+							tile1 =
+							tile_1.style.background = 'url(img/mystery.png ) no-repeat';
+							tile_1.style.backgroundSize = "102px 110px";
 							tile_1.innerHTML = "";
+
 							tile_2.style.background = 'url(img/mystery.png) no-repeat';
+							tile_2.style.backgroundSize = "102px 110px";
+
 							tile_2.innerHTML = "";
 							memory_values = [];
 							memory_tile_ids = [];
@@ -116,5 +123,6 @@
 		newBoard();
 	</script>
 </body>
+
 
 </html>
